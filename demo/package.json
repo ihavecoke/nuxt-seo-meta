@@ -1,0 +1,16 @@
+{
+  "name": "nuxtjs-seo-meta-demo",
+  "dependencies": {
+    "nuxt": "latest"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1",
+    "nuxt-i18n": "^6.6.0",
+    "sass-loader": "^8.0.2"
+  }
+}
