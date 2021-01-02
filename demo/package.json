@@ -1,6 +1,7 @@
 {
   "name": "nuxtjs-seo-meta-demo",
   "dependencies": {
+    "lodash-es": "^4.17.20",
     "nuxt": "latest"
   },
   "scripts": {

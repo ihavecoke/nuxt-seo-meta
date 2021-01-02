@@ -8,11 +8,12 @@
 <script>
 export default {
   name: "IndexPage",
-  data(){
-    return {meta: {title: 'ss'}}
+  data() {
+    return { meta: { title: "ss" } }
   },
   asyncData({ seoMeta }) {
-    console.log('asyncData-15', )
+    seoMeta({ title: "fuck" })
+    console.log("asyncData-15")
     return {}
   }
 }
