@@ -3,7 +3,7 @@ Support Nuxtjs generate SEO metadata
 
 you can define seo metadata in different page
 
-###Install
+### Install
 ```bash
 yarn add nuxtjs-seo-meta
  
