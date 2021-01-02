@@ -9,7 +9,7 @@
 export default {
   name: "IndexPage",
   asyncData({ seoMeta }) {
-    seoMeta({
+    return seoMeta({
       title: "PageTitle",
       description: "PageDescription",
       url: "PageUrl",
