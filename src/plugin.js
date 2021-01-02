@@ -22,6 +22,7 @@ function seoMeta(options, nuxtContext = {}) {
     { property: "og:locale", content: options.locale },
     { property: "og:site_name", content: options.siteName }
   ]
+
   const twitterMeta = [
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:site", content: url },
@@ -30,9 +31,11 @@ function seoMeta(options, nuxtContext = {}) {
     { name: "twitter:description", content: options.description },
     { name: "twitter:image", content: imageUrl }
   ]
+
   const metaTags = [baseMeta]
   if (!options.ignoreTwitter) metaTags.push(twitterMeta)
   if (!options.ignoreOG) metaTags.push(ogMeta)
+
   const normalizedMetas = metaTags.flat().reduce((memo, tag) => {
     if (!tag.content) return memo
     if (tag.name) {
@@ -50,11 +53,13 @@ function seoMeta(options, nuxtContext = {}) {
     }
     return memo
   }, [])
+
   if (nuxtContext) {
     const { app: nuxtApp } = nuxtContext
     nuxtApp.head.meta = values(
       merge(keyBy(normalizedMetas, "hid"), keyBy(normalizedMetas, "hid"))
     )
+    return normalizedMetas
   } else {
     return normalizedMetas
   }
@@ -63,5 +68,5 @@ function seoMeta(options, nuxtContext = {}) {
 const defaultOptions = <%= serialize(options) %>
 
 export default ctx => {
-  ctx.seoMeta = seoOptions => seoMeta({...defaultOptions, ..seoOptions}, ctx)
+  ctx.seoMeta = seoOptions => seoMeta({...defaultOptions, ...seoOptions}, ctx)
 }
