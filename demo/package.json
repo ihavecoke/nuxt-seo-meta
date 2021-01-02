@@ -2,7 +2,8 @@
   "name": "nuxtjs-seo-meta-demo",
   "dependencies": {
     "lodash-es": "^4.17.20",
-    "nuxt": "latest"
+    "nuxt": "latest",
+    "nuxtjs-seo-meta": "^1.0.0"
   },
   "scripts": {
     "dev": "nuxt",
@@ -10,6 +11,7 @@
     "start": "nuxt start"
   },
   "devDependencies": {
+    "@nuxt/types": "~2.14.0",
     "node-sass": "^4.13.1",
     "nuxt-i18n": "^6.6.0",
     "sass-loader": "^8.0.2"

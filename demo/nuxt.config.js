@@ -13,7 +13,7 @@ export default {
       "nuxtjs-seo-meta",
       {
         defaultImage: "defaultImage.png",
-        defaultUrl: "https://longbridge.global"
+        defaultUrl: "https://facebook.com"
       }
     ]
   ]
