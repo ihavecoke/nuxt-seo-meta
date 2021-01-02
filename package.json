@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "nuxtjs seo meta generator ",
   "main": "src/module.js",
-  "author": "mixbo",
+  "author": "ihavecoke",
+  "repository": {
+    "url": "https://github.com/ihavecoke/nuxtjs-seo-meta",
+    "type": "git"
+  },
   "license": "MIT",
   "private": true,
   "files": [
