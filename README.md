@@ -6,7 +6,7 @@ you can define seo metadata in different page
 ### Install
 ```bash
 yarn add nuxtjs-seo-meta
- 
+
 // or npm 
 npm add nuxtjs-seo-meta
 ```
@@ -52,7 +52,7 @@ Below options all effect html head meta tag
 | url      | string  | current page url or other you want to share with others |
 | defaultUrl      | string  | default image when your page not present images  |
 | image      | string  | current page share image url |
-| defaultImage      | string  | current page share image url |
+| defaultImage      | string  | default current page share image url |
 | locale      | string  | current page locale, this option just present in og |
 | siteName      | string  | you web app name, this option just present in og |
 | twitterUser      | string  | you can share page to twitter with creator user |
