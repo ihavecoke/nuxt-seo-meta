@@ -39,7 +39,7 @@ async asyncData({ seoMeta }) {
 
 That all, you can inspect you page in chrome developer tools, here i just show demo screenshot
 
-![DemoImage](http://public.mixbo.cn/nuxtjs-seo-meta.png)
+![DemoImage](http://public.mixbo.cn/nuxtjs-seo-meta.png?t)
 
 ### Options
 
