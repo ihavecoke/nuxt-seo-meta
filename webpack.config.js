@@ -1,13 +1,15 @@
 const path = require("path")
 
 module.exports = {
-  devtool: "source-map",
-  entry: "./src/index.ts",
+  devtool: false,
+  entry: {
+    plugin: "./src/plugin.ts"
+  },
   mode: "production",
   output: {
-    filename: "index.js",
-    libraryTarget: "umd",
-    path: path.resolve(__dirname, "dist")
+    filename: "[name].js",
+    libraryTarget: "amd",
+    path: path.resolve(__dirname, "src")
   },
   module: {
     rules: [

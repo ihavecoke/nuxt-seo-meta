@@ -1,31 +1,17 @@
 // you can found more info: https://metatags.io/
-interface ISeoMetaOptions {
-  title: string
-  description: string
-  url: string
-  image?: string
-  keywords?: string
-  desc?: string
-  locale?: string
-  siteName?: string
-  ignoreTwitter?: Boolean
-  twitterUser?: string
-  ignoreOG?: Boolean
-  defaultImage?: string
-  defaultUrl?: string
-  defaultDescription?: string
-}
-export default function seoMeta(options: ISeoMetaOptions) {
+import { merge, keyBy, values } from "lodash"
+
+function seoMeta(options, nuxtContext = {}) {
   // default fallback
   const imageUrl = options.image || options.defaultImage
   const url = options.url || options.defaultUrl
+
   const baseMeta = [
     { name: "title", content: options.title },
     { name: "description", content: options.description },
     { name: "image", content: imageUrl },
     { name: "keyword", content: options.keywords || options.description }
   ]
-
   // Facebook & LinkedIn
   const ogMeta = [
     { property: "og:title", content: options.title },
@@ -36,7 +22,6 @@ export default function seoMeta(options: ISeoMetaOptions) {
     { property: "og:locale", content: options.locale },
     { property: "og:site_name", content: options.siteName }
   ]
-
   const twitterMeta = [
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:site", content: url },
@@ -45,12 +30,10 @@ export default function seoMeta(options: ISeoMetaOptions) {
     { name: "twitter:description", content: options.description },
     { name: "twitter:image", content: imageUrl }
   ]
-
-  const metaTags: any[] = [baseMeta]
+  const metaTags = [baseMeta]
   if (!options.ignoreTwitter) metaTags.push(twitterMeta)
   if (!options.ignoreOG) metaTags.push(ogMeta)
-
-  return metaTags.flat().reduce((memo, tag) => {
+  const normalizedMetas = metaTags.flat().reduce((memo, tag) => {
     if (!tag.content) return memo
     if (tag.name) {
       memo.push({
@@ -67,4 +50,18 @@ export default function seoMeta(options: ISeoMetaOptions) {
     }
     return memo
   }, [])
+  if (nuxtContext) {
+    const { app: nuxtApp } = nuxtContext
+    nuxtApp.head.meta = values(
+      merge(keyBy(normalizedMetas, "hid"), keyBy(normalizedMetas, "hid"))
+    )
+  } else {
+    return normalizedMetas
+  }
+}
+
+const defaultOptions = <%= serialize(options) %>
+
+export default ctx => {
+  ctx.seoMeta = seoOptions => seoMeta({...defaultOptions, ..seoOptions}, ctx)
 }

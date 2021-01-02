@@ -1,11 +1,15 @@
 {
   "name": "nuxtjs-seo-meta",
   "version": "1.0.0",
-  "description": "nuxtjs seo meta genreator ",
-  "main": "index.js",
+  "description": "nuxtjs seo meta generator ",
+  "main": "src/module.js",
   "author": "mixbo",
   "license": "MIT",
   "private": true,
+  "files": [
+    "src/module.js",
+    "src/plugin.js"
+  ],
   "keywords": [
     "nuxtjs",
     "seo",
@@ -27,5 +31,8 @@
     "typescript": "^4.1.3",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
   }
 }
