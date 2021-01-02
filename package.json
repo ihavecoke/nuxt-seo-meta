@@ -9,7 +9,7 @@
     "type": "git"
   },
   "license": "MIT",
-  "private": true,
+  "private": false,
   "files": [
     "src/module.js",
     "src/plugin.js"
