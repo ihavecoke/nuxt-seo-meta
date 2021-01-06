@@ -56,9 +56,9 @@ function seoMeta(options, nuxtContext = {}) {
 
   if (nuxtContext) {
     const { app: nuxtApp } = nuxtContext
-    nuxtApp.head.meta = values(
+    nuxtApp.head.meta = [...nuxtApp.head.meta, ...values(
       merge(keyBy(normalizedMetas, "hid"), keyBy(normalizedMetas, "hid"))
-    )
+    )]
     return normalizedMetas
   } else {
     return normalizedMetas
