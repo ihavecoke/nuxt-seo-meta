@@ -1,6 +1,6 @@
 {
   "name": "nuxt-seo-meta",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "nuxtjs seo meta generator ",
   "main": "src/module.js",
   "author": "ihavecoke",
