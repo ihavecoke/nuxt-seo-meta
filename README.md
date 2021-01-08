@@ -4,10 +4,10 @@ Support Nuxt generate SEO metadata easy
 ### Install
 
 ```bash
-yarn add nuxtjs-seo-meta
+yarn add nuxt-seo-meta
 
 // or npm 
-npm add nuxtjs-seo-meta
+npm add nuxt-seo-meta
 ```
 
 Add a config to `nuxt.config.js` file.
