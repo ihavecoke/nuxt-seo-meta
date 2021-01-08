@@ -19,7 +19,3 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.index-page {
-}
-</style>

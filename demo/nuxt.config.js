@@ -9,12 +9,10 @@ export default {
   loading: { color: "#666" },
 
   modules: [
-    [
-      "nuxtjs-seo-meta",
-      {
-        defaultImage: "defaultImage.png",
-        defaultUrl: "https://facebook.com"
-      }
-    ]
-  ]
+    'nuxt-seo-meta'
+  ],
+  seoMeta:{
+    defaultImage: "defaultImage.png",
+    defaultUrl: "https://facebook.com"
+  }
 }

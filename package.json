@@ -1,11 +1,11 @@
 {
-  "name": "nuxtjs-seo-meta",
-  "version": "1.0.2",
+  "name": "nuxt-seo-meta",
+  "version": "1.1.0",
   "description": "nuxtjs seo meta generator ",
   "main": "src/module.js",
   "author": "ihavecoke",
   "repository": {
-    "url": "https://github.com/ihavecoke/nuxtjs-seo-meta",
+    "url": "https://github.com/ihavecoke/nuxt-seo-meta",
     "type": "git"
   },
   "license": "MIT",
