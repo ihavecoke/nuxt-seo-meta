@@ -8,8 +8,8 @@
 <script>
 export default {
   name: "IndexPage",
-  asyncData({ $seoMeta }) {
-    return $seoMeta({
+  asyncData({ seoMeta }) {
+    return seoMeta({
       title: "PageTitle",
       description: "PageDescription",
       url: "PageUrl",
@@ -19,7 +19,3 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.index-page {
-}
-</style>

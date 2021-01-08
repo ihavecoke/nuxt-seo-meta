@@ -1,14 +1,11 @@
 {
-  "name": "nuxtjs-seo-meta-demo",
+  "name": "nuxt-seo-meta-demo",
   "dependencies": {
-    "lodash-es": "^4.17.20",
-    "nuxt": "latest",
-    "nuxtjs-seo-meta": "^1.0.0"
+    "nuxt": "latest"
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start"
+    "build": "nuxt build"
   },
   "devDependencies": {
     "@nuxt/types": "~2.14.0",
