@@ -1,9 +1,8 @@
-# nuxtjs-seo-meta
-Support Nuxtjs generate SEO metadata
-
-you can define seo metadata in different page
+# nuxt-seo-meta
+Support Nuxt generate SEO metadata easy
 
 ### Install
+
 ```bash
 yarn add nuxtjs-seo-meta
 
@@ -11,24 +10,28 @@ yarn add nuxtjs-seo-meta
 npm add nuxtjs-seo-meta
 ```
 
-add config to `nuxt.config.js`
-
+Add a config to `nuxt.config.js` file.
+https://nuxtjs.org/docs/2.x/directory-structure/plugins#inject-in-root--context
 ```javascript
-modules:[
+{
+  ...your options
+  modules: [
+    'nuxt-seo-meta',
+  ],
   // ... your other modules
-  ['nuxtjs-seo-meta',{
-    defaultImage: 'https://fakeimg.pl/400x400/?text=DefaultImage',
-    defaultUrl: 'https://facebook.com'
-      // ... more options
-  }]
-]
+  seoMeta: {
+    title: 'SEO Meta Demo',
+    description: 'SEO Description'
+    // ... more options
+  }
+}
 ```
 
-use `seoMeta` method in nuxtjs context, general we can use at `aysncData` hooks
+use \$seoMeta method in nuxtjs context, general we can use at `aysncData` hooks
 
-```javascript
-async asyncData({ seoMeta }) {
-  seoMeta({
+``` javascript
+async asyncData({ \$seoMeta }) {
+  \$seoMeta({
     title: "PageTitle",
     description: "PageDescription",
     url: "PageUrl",
@@ -37,7 +40,7 @@ async asyncData({ seoMeta }) {
 }
 ```
 
-That all, you can inspect you page in chrome developer tools, here i just show demo screenshot
+That all, you can inspect you page in Chrome developer tools, here just show demo screenshot
 
 ![DemoImage](http://public.mixbo.cn/nuxtjs-seo-meta.png?t)
 
