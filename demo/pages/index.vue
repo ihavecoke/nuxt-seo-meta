@@ -8,8 +8,8 @@
 <script>
 export default {
   name: "IndexPage",
-  asyncData({ seoMeta }) {
-    return seoMeta({
+  asyncData({ $seoMeta }) {
+    return $seoMeta({
       title: "PageTitle",
       description: "PageDescription",
       url: "PageUrl",

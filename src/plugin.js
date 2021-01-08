@@ -67,6 +67,6 @@ function seoMeta(options, nuxtContext = {}) {
 
 const defaultOptions = <%= serialize(options) %>
 
-export default ctx => {
-  ctx.seoMeta = seoOptions => seoMeta({...defaultOptions, ...seoOptions}, ctx)
+export default (ctx, inject) => {
+  inject('seoMeta', seoOptions => seoMeta({...defaultOptions, ...seoOptions}, ctx))
 }
