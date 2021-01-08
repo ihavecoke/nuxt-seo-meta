@@ -11,7 +11,6 @@ npm add nuxt-seo-meta
 ```
 
 Add a config to `nuxt.config.js` file.
-https://nuxtjs.org/docs/2.x/directory-structure/plugins#inject-in-root--context
 ```javascript
 {
   ...your options
