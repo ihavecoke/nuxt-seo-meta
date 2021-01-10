@@ -29,3 +29,4 @@ jobs:
       - name: Run test
         run: |
           yarn install
+          yarn test
