@@ -3,17 +3,19 @@ import { Module } from "@nuxt/types"
 
 interface ModuleOptions {}
 const CONFIG_KEY = "seoMeta"
+
 const nuxtModule: Module<ModuleOptions> = function module(
   moduleOptions: ModuleOptions
 ) {
-  const src = path.resolve(__dirname, "./plugin.js")
-  const options = { ...this.options[CONFIG_KEY], ...moduleOptions }
-  const fileName = path.join("seo-meta", "plugin.js")
-  this.addPlugin({ src, options, fileName })
+  this.addPlugin({
+    src: path.resolve(__dirname, "./plugin.js"),
+    options: { ...this.options[CONFIG_KEY], ...moduleOptions },
+    fileName: path.join("nuxt-seo-meta", "plugin.js")
+  })
+
   this.addTemplate({
     src: path.resolve(__dirname, "./seo-meta.js"),
-    fileName: path.join("seo-meta", "seo-meta.js"),
-    options
+    fileName: path.join("nuxt-seo-meta", "seo-meta.js")
   })
 }
 
