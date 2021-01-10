@@ -20,7 +20,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "webpack"
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.12",
