@@ -2,7 +2,7 @@
   "name": "nuxt-seo-meta-demo",
   "dependencies": {
     "nuxt": "latest",
-    "nuxt-seo-meta": "^2.0.0"
+    "nuxt-seo-meta": "^2.1.0"
   },
   "scripts": {
     "dev": "nuxt",

@@ -5760,10 +5760,10 @@ nuxt-i18n@^6.6.0:
     klona "^2.0.4"
     vue-i18n "^8.18.1"
 
-nuxt-seo-meta@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npm.taobao.org/nuxt-seo-meta/download/nuxt-seo-meta-2.0.0.tgz#d3d687c26c84dc172981a0e7e8271408d6ba67f5"
-  integrity sha1-09aHwmyE3BcpgaDn6CcUCNa6Z/U=
+nuxt-seo-meta@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/nuxt-seo-meta/download/nuxt-seo-meta-2.1.0.tgz?cache=0&sync_timestamp=1610257897282&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnuxt-seo-meta%2Fdownload%2Fnuxt-seo-meta-2.1.0.tgz#f0fb810ce5497233d0091873f6a42eb632e1909c"
+  integrity sha1-8PuBDOVJcjPQCRhz9qQutjLhkJw=
   dependencies:
     lodash "^4.17.20"
 
