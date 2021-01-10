@@ -4,7 +4,8 @@ const ShellPlugin = require(path.resolve(__dirname, "shell-plugin.js"))
 module.exports = {
   devtool: false,
   entry: {
-    module: "./src/module.ts"
+    module: "./src/module.ts",
+    "seo-meta": "./src/seo-meta.ts"
   },
   mode: "production",
   output: {
