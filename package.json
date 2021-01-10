@@ -2,7 +2,7 @@
   "name": "nuxt-seo-meta",
   "version": "2.0.0",
   "description": "nuxtjs seo meta generator ",
-  "main": "dist/module.js",
+  "main": "dist/index.js",
   "author": "ihavecoke",
   "repository": {
     "url": "https://github.com/ihavecoke/nuxt-seo-meta",
@@ -20,13 +20,16 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "webpack"
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.12",
     "@types/jest": "^26.0.19",
+    "@types/lodash": "^4.14.167",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
+    "clean-webpack-plugin": "^3.0.0",
     "eslint": "^7.16.0",
     "fs-extra": "^9.0.1",
     "jest": "^26.6.3",

@@ -1,18 +1,18 @@
 const path = require("path")
 const ShellPlugin = require(path.resolve(__dirname, "shell-plugin.js"))
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 module.exports = {
-  devtool: false,
   entry: {
-    module: "./src/module.ts"
+    index: "./src/index.ts",
+    "seo-meta": "./src/seo-meta.ts"
   },
-  mode: "production",
   output: {
     filename: "[name].js",
     libraryTarget: "commonjs",
     path: path.resolve(__dirname, "dist")
   },
-  plugins: [new ShellPlugin()],
+  plugins: [new ShellPlugin(), new CleanWebpackPlugin()],
   module: {
     rules: [
       {

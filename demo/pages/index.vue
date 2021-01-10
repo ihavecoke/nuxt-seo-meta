@@ -1,7 +1,10 @@
 <template>
-  <div class="index-page">
-    <h3>Current page meta info:</h3>
-    <p>{{ JSON.stringify($data) }}</p>
+  <div>
+    <div class="index-page">
+      <h3>Current page meta info:</h3>
+      <p>{{ JSON.stringify($data) }}</p>
+    </div>
+    <NuxtLink to="products">Products</NuxtLink>
   </div>
 </template>
 
@@ -13,9 +16,8 @@ export default {
       title: "PageTitle",
       description: "PageDescription",
       url: "PageUrl",
-      image: 'SocialShareImage.png'
+      image: "SocialShareImage.png"
     })
   }
 }
 </script>
-
