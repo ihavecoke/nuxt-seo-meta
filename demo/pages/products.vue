@@ -11,10 +11,15 @@
 <script>
 export default {
   name: "ProductsPage",
-  async asyncData({ $seoMeta }) {
-    return $seoMeta({
-      twitterUser: "ihavecoke"
-    })
+  head({ $seoMeta }) {
+    return {
+      meta: $seoMeta(
+        {
+          twitterUser: "ihavecoke"
+        },
+        false
+      )
+    }
   }
 }
 </script>
