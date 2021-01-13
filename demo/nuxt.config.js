@@ -7,12 +7,18 @@ export default {
     port: 4040
   },
   loading: { color: "#666" },
-
-  modules: [
-    'nuxt-seo-meta'
-  ],
-  seoMeta:{
+  css: ["element-ui/lib/theme-chalk/index.css"],
+  plugins: ["~/plugins/element-ui.js"],
+  modules: ["nuxt-seo-meta", "@nuxtjs/markdownit"],
+  seoMeta: {
     defaultImage: "defaultImage.png",
     defaultUrl: "https://facebook.com"
+  },
+  markdownit: {
+    preset: "default",
+    linkify: true,
+    breaks: true,
+    injected: true,
+    use: ["markdown-it-div", "markdown-it-attrs"]
   }
 }

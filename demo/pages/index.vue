@@ -1,16 +1,23 @@
 <template>
   <div>
     <div class="index-page">
-      <h3>Current page meta info:</h3>
-      <p>{{ JSON.stringify($data) }}</p>
+      <h1>Generate default seo meta</h1>
+      <div v-html="$md.render(content)"/>
     </div>
-    <NuxtLink to="products">Products</NuxtLink>
   </div>
 </template>
 
 <script>
 export default {
   name: "IndexPage",
+  computed: {
+    content() {
+      return  "```javascript" +
+        `${JSON.stringify(Object.values(this.$data))}` + "" +
+        "```"
+
+    }
+  },
   asyncData({ $seoMeta }) {
     return $seoMeta({
       title: "PageTitle",
