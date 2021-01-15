@@ -12,7 +12,7 @@ export default {
   name: "IndexPage",
   computed: {
     content() {
-      return  "```javascript" +
+      return  "```" +
         `${JSON.stringify(Object.values(this.$data))}` + "" +
         "```"
 
