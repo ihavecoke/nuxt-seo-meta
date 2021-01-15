@@ -6,7 +6,7 @@
     "markdown-it-attrs": "^4.0.0",
     "markdown-it-div": "^1.1.0",
     "nuxt": "latest",
-    "nuxt-seo-meta": "^2.1.0"
+    "nuxt-seo-meta": "^2.1.1"
   },
   "scripts": {
     "dev": "nuxt",
