@@ -1,5 +1,6 @@
 // you can found more info: https://metatags.io/
 import merge from "lodash/merge"
+import flatten from "lodash/flatten"
 import keyBy from "lodash/keyBy"
 import values from "lodash/values"
 import { Context } from "@nuxt/types/app"
@@ -60,7 +61,8 @@ export default function seoMeta(
   if (!options.ignoreTwitter) metaTags.push(twitterMeta)
   if (!options.ignoreOG) metaTags.push(ogMeta)
 
-  const normalizedMetas = metaTags.flat().reduce((memo: any, tag: any) => {
+  const tags = flatten(metaTags) as any[]
+  const normalizedMetas = tags.reduce((memo: any, tag: any) => {
     if (!tag.content) return memo
     if (tag.name) {
       memo.push({
