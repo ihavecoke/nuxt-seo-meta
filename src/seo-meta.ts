@@ -85,7 +85,10 @@ export default function seoMeta(
     nuxtApp.head.meta = [
       ...nuxtApp.head.meta,
       ...values(
-        merge(keyBy(normalizedMetas, "hid"), keyBy(normalizedMetas, "hid"))
+        merge(
+          keyBy([...nuxtApp.head.meta], "hid"),
+          keyBy(normalizedMetas, "hid")
+        )
       )
     ]
   }

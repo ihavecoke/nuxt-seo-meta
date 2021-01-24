@@ -17,7 +17,7 @@ test("should return default meta attributes", () => {
     { hid: "title", name: "title", content: "title" },
     { hid: "description", name: "description", content: "description" },
     { hid: "image", name: "image", content: "default.png" },
-    { hid: "keyword", name: "keyword", content: "description" }
+    { hid: "keywords", name: "keywords", content: "description" }
   ]
   expect(result).toStrictEqual(expectValue)
 })
@@ -27,7 +27,7 @@ test("should return twitter meta if not ignore twitter meta", () => {
   const expectValue = [
     { hid: "title", name: "title", content: "title" },
     { hid: "description", name: "description", content: "description" },
-    { hid: "keyword", name: "keyword", content: "description" },
+    { hid: "keywords", name: "keywords", content: "description" },
     {
       hid: "twitter:card",
       name: "twitter:card",
@@ -53,7 +53,7 @@ test("should return og meta info if not ignore og", () => {
   const expectValue = [
     { hid: "title", name: "title", content: "title" },
     { hid: "description", name: "description", content: "description" },
-    { hid: "keyword", name: "keyword", content: "description" },
+    { hid: "keywords", name: "keywords", content: "description" },
     { hid: "og:title", property: "og:title", content: "title" },
     {
       hid: "og:description",
@@ -75,7 +75,7 @@ test("should return all support meta", () => {
   const expectValue = [
     { hid: "title", name: "title", content: "title" },
     { hid: "description", name: "description", content: "description" },
-    { hid: "keyword", name: "keyword", content: "description" },
+    { hid: "keywords", name: "keywords", content: "description" },
     {
       hid: "twitter:card",
       name: "twitter:card",
