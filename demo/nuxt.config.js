@@ -7,8 +7,6 @@ export default {
     port: 4040
   },
   loading: { color: "#666" },
-  css: ["element-ui/lib/theme-chalk/index.css"],
-  plugins: ["~/plugins/element-ui.js"],
   modules: ["nuxt-seo-meta", "@nuxtjs/markdownit"],
   seoMeta: {
     defaultImage: "defaultImage.png",
