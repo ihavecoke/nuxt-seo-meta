@@ -35,7 +35,7 @@ export default function seoMeta(
     { name: "title", content: options.title },
     { name: "description", content: description },
     { name: "image", content: imageUrl },
-    { name: "keyword", content: options.keywords || description }
+    { name: "keywords", content: options.keywords || description }
   ]
   // Facebook & LinkedIn
   const ogMeta = [
