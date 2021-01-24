@@ -1,6 +1,7 @@
 {
   "name": "nuxt-seo-meta-demo",
   "dependencies": {
+    "@nuxt/content": "^1.11.1",
     "markdown-it-attrs": "^4.0.0",
     "markdown-it-div": "^1.1.0",
     "nuxt": "latest",

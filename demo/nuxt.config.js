@@ -7,7 +7,7 @@ export default {
     port: 4040
   },
   loading: { color: "#666" },
-  modules: ["nuxt-seo-meta", "@nuxtjs/markdownit"],
+  modules: ["nuxt-seo-meta", "@nuxt/content"],
   seoMeta: {
     defaultImage: "defaultImage.png",
     defaultUrl: "https://facebook.com"

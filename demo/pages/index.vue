@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="index-page">
-      <h1>Generate default seo meta</h1>
-      <div v-html="$md.render(content)"/>
+      <h1>Nuxt SEO Meta</h1>
+      <nuxt-content :document="readme" />
     </div>
   </div>
 </template>
@@ -10,21 +10,18 @@
 <script>
 export default {
   name: "IndexPage",
-  computed: {
-    content() {
-      return  "```" +
-        `${JSON.stringify(Object.values(this.$data))}` + "" +
-        "```"
-
+  head({ $seoMeta }) {
+    return {
+      meta: $seoMeta({
+        title: "PageTitle",
+        description: "PageDescription",
+        url: "PageUrl",
+        image: "SocialShareImage.png"
+      })
     }
   },
-  asyncData({ $seoMeta }) {
-    return $seoMeta({
-      title: "PageTitle",
-      description: "PageDescription",
-      url: "PageUrl",
-      image: "SocialShareImage.png"
-    })
+  async asyncData({ $content }) {
+    return { readme: await $content("readme").fetch() }
   }
 }
 </script>
