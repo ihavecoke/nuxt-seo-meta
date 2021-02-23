@@ -1,9 +1,5 @@
 // you can found more info: https://metatags.io/
-import merge from "lodash/merge"
-import flatten from "lodash/flatten"
-import keyBy from "lodash/keyBy"
-import values from "lodash/values"
-import { Context } from "@nuxt/types/app"
+import type { Context } from "@nuxt/types/app"
 
 interface ISeoMetaOptions {
   title: string
@@ -61,7 +57,7 @@ export default function seoMeta(
   if (!options.ignoreTwitter) metaTags.push(twitterMeta)
   if (!options.ignoreOG) metaTags.push(ogMeta)
 
-  const tags = flatten(metaTags) as any[]
+  const tags = metaTags.flat() as any[]
   const normalizedMetas = tags.reduce((memo: any, tag: any) => {
     if (!tag.content) return memo
     if (tag.name) {
@@ -82,15 +78,24 @@ export default function seoMeta(
 
   if (nuxtContext.app) {
     const { app: nuxtApp } = nuxtContext
+    // TODO: Handle non-array / undefined case
     nuxtApp.head.meta = [
       ...nuxtApp.head.meta,
-      ...values(
-        merge(
-          keyBy([...nuxtApp.head.meta], "hid"),
-          keyBy(normalizedMetas, "hid")
-        )
+      ...Object.values(
+        {
+          ...keyBy(nuxtApp.head.meta, "hid"),
+          ...keyBy(normalizedMetas, "hid")
+        }
       )
     ]
   }
   return normalizedMetas
+}
+
+function keyBy(arr: Array<any>, key: string) {
+  const obj: any = {}
+  for (const val of arr) {
+    obj[val[key] as string] = val
+  }
+  return obj
 }

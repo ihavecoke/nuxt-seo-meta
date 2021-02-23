@@ -1,4 +1,4 @@
-import seoMeta from "./../src/seo-meta"
+import seoMeta from "./../src/runtime/seo-meta"
 
 const title = "title"
 const description = "description"

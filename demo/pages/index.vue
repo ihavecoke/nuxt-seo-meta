@@ -2,7 +2,7 @@
   <div>
     <div class="index-page">
       <h1>Nuxt SEO Meta</h1>
-      <nuxt-content :document="readme" />
+      Hello!
     </div>
   </div>
 </template>
@@ -19,9 +19,6 @@ export default {
         image: "SocialShareImage.png"
       })
     }
-  },
-  async asyncData({ $content }) {
-    return { readme: await $content("readme").fetch() }
   }
 }
 </script>

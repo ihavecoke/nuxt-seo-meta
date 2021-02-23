@@ -3,19 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "importHelpers": true,
     "esModuleInterop": true,
-    "sourceMap": true,
-    "allowJs": true,
-    "baseUrl": "./",
-    "strict": true,
-    "paths": {
-      "@/*": ["src/*"]
-    },
-    "allowSyntheticDefaultImports": true
-  },
-  "include": ["src/*.ts"],
-  "exclude": ["node_modules",
-    "test/index.test.ts"
-  ]
+    "strict": true
+  }
 }
