@@ -78,16 +78,15 @@ export default function seoMeta(
 
   if (nuxtContext.app) {
     const { app: nuxtApp } = nuxtContext
-    // TODO: Handle non-array / undefined case
-    nuxtApp.head.meta = [
-      ...nuxtApp.head.meta,
-      ...Object.values(
-        {
-          ...keyBy(nuxtApp.head.meta, "hid"),
-          ...keyBy(normalizedMetas, "hid")
-        }
-      )
-    ]
+    if (nuxtApp.head && typeof nuxtApp.head !== 'function') {
+      nuxtApp.head.meta = [
+        ...(nuxtApp.head.meta || []),
+        ...Object.values({
+            ...keyBy(nuxtApp.head.meta || [], "hid"),
+            ...keyBy(normalizedMetas, "hid")
+          }) as any
+      ]
+    }
   }
   return normalizedMetas
 }
