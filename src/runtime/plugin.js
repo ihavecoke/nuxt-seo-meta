@@ -6,7 +6,7 @@ const defaultOptions = <%= serialize(options) %>
 export default (ctx, inject) => {
   const fn = (seoOptions, autoInjectToHead = true) => {
     const context = autoInjectToHead ? ctx : {}
-    const defaultUrl = process.server ? requrl(ctx.req) : requrl(/* uses url */)
+    const defaultUrl = process.server ? requrl(ctx.req, true) : requrl(/* uses url */)
     const options = {
       ...defaultOptions,
       url: defaultUrl,
