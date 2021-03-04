@@ -2,7 +2,7 @@
   <div>
     <div class="index-page">
       <h1>Nuxt SEO Meta</h1>
-      Hello!
+      <div>The doc just have writing</div>
     </div>
   </div>
 </template>
