@@ -1,4 +1,5 @@
-// you can found more info: https://metatags.io/
+// you can fund more info: https://metatags.io/
+
 import type { Context } from "@nuxt/types/app"
 
 interface ISeoMetaOptions {
@@ -78,13 +79,13 @@ export default function seoMeta(
 
   if (nuxtContext.app) {
     const { app: nuxtApp } = nuxtContext
-    if (nuxtApp.head && typeof nuxtApp.head !== 'function') {
+    if (nuxtApp.head && typeof nuxtApp.head !== "function") {
       nuxtApp.head.meta = [
         ...(nuxtApp.head.meta || []),
-        ...Object.values({
-            ...keyBy(nuxtApp.head.meta || [], "hid"),
-            ...keyBy(normalizedMetas, "hid")
-          }) as any
+        ...(Object.values({
+          ...keyBy(nuxtApp.head.meta || [], "hid"),
+          ...keyBy(normalizedMetas, "hid")
+        }) as any)
       ]
     }
   }
