@@ -1,48 +1,46 @@
 {
   "name": "nuxt-seo-meta",
   "version": "2.2.0",
-  "description": "nuxtjs seo meta generator ",
-  "main": "dist/index.js",
-  "author": "ihavecoke",
-  "repository": {
-    "url": "https://github.com/ihavecoke/nuxt-seo-meta",
-    "type": "git"
-  },
-  "license": "MIT",
-  "private": false,
-  "files": [
-    "dist/*.js"
-  ],
+  "description": "nuxtjs seo meta generator",
   "keywords": [
     "nuxtjs",
     "seo",
     "ssr"
   ],
+  "repository": "ihavecoke/nuxt-seo-meta",
+  "license": "MIT",
+  "author": "ihavecoke",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
-    "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production"
-  },
-  "devDependencies": {
-    "@nuxt/types": "^2.14.12",
-    "@types/jest": "^26.0.19",
-    "@types/lodash": "^4.14.167",
-    "@typescript-eslint/eslint-plugin": "^4.8.2",
-    "@typescript-eslint/parser": "^4.8.2",
-    "clean-webpack-plugin": "^3.0.0",
-    "eslint": "^7.16.0",
-    "fs-extra": "^9.0.1",
-    "jest": "^26.6.3",
-    "path-browserify": "^1.0.1",
-    "prettier": "^2.2.1",
-    "ts-jest": "^26.4.4",
-    "ts-loader": "^8.0.12",
-    "typescript": "^4.1.3",
-    "webpack": "^5.11.1",
-    "webpack-cli": "^4.3.0",
-    "webpack-shell-plugin": "^0.5.0"
+    "dev": "nuxt dev demo",
+    "build": "siroc build && mkdist --src src/runtime --dist dist/runtime"
   },
   "dependencies": {
-    "lodash": "^4.17.20"
+    "requrl": "^3.0.2"
+  },
+  "devDependencies": {
+    "@nrwl/eslint-plugin-nx": "^11.3.1",
+    "@nuxt/types": "^2.14.12",
+    "@nuxt/typescript-build": "^2.0.5",
+    "@types/jest": "^26.0.19",
+    "@types/lodash": "^4.14.167",
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^8.0.0",
+    "fs-extra": "^9.0.1",
+    "jest": "^26.6.3",
+    "mkdist": "^0.1.1",
+    "nuxt": "^2.15.2",
+    "path-browserify": "^1.0.1",
+    "prettier": "^2.2.1",
+    "siroc": "^0.6.7",
+    "ts-jest": "^26.4.4",
+    "ts-loader": "^8.0.12",
+    "typescript": "^4.1.3"
   }
 }
