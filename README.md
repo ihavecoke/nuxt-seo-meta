@@ -1,6 +1,6 @@
 # nuxt-seo-meta
 
-Support Nuxt generate SEO metadata easy
+Support [Nuxt](https://nuxtjs.org/) generate seo metadata easy
 
 ### Install
 
@@ -10,67 +10,77 @@ yarn add nuxt-seo-meta
 //or npm
 npm add nuxt-seo-meta
 ```
+That's all.
 
-Add a config to `nuxt.config.js` file.
+### Usage
 
-```javascript
+You can global config seo metadata in `nuxt.config.js`
+
+```typescript
 {
-  ... your options
+  // your configurations
   modules: [
     'nuxt-seo-meta',
-  ],
+  ], 
+    
+  // global set your site page title and descriptions 
   seoMeta: {
-    title: 'SEO Meta Demo',
-    description: 'SEO Description'
+    title: 'My site title',
+    keywords: 'keyword1, keyword2, keyword3',
+    description: 'My site description',
   }
 }
 ```
 
-use `$seoMeta` method in nuxtjs context, general we can use at `aysncData` hooks
+
+Also you can set seo metadata in page file component like ***pages/index.vue***, 
+there has two ways to set seo metadata.
+
+* at `asyncData` function
 
 ```javascript
 async asyncData({ $seoMeta }) {
   $seoMeta({
-    title: "PageTitle",
-    description: "PageDescription",
-    url: "PageUrl",
-    image: 'SocialShareImage.png'
+    title: "My awesome site",
+    description: "awesome site description",
+    url: "https://awesome.site",
+    image: 'https://awesome.cdn/awesome.png'
   })
 }
 ```
+`$seoMeta` is a function that will automate generate seo metadata html tag for you page.
 
-use in head options in page component
+* at `head` function
 
 ```javascript
-
 head({$seoMeta}){
   return {
-    meta: $seoMeta({title: 'title'...}, false)
+    meta: $seoMeta({
+      title: "My awesome site",
+      description: "awesome site description",
+      url: "https://awesome.site",
+      image: 'https://awesome.cdn/awesome.png'
+    }, false)
   }
 }
-
 ```
 
-if you call `$seoMeta` in page `head` method you need assign the return value to **meta** options and pass the second args to `false`
+it important to note that, if call `$setMeta` in `head` function, the second parameter must be `false`. 
 
-the `$seoMeta` method support only return generate metadata if you pass `false` to the second argument.
+`false` told nuxt-seo-meta only return a metadata object not generate meta tags.
 
-the `false` options will not inject the metadata to html head tag, only will return the generate data to you
+this is useful when you want to set meta tags in your page component and merge with more head data.
 
-
-
-That all. you can inspect you page in Chrome developer tools
-
-Here show the demo screenshot.
-
+> Demo screenshot
 ![DemoImage](http://public.mixbo.cn/nuxtjs-seo-meta.png?t)
+> `$seoMeta` function will return or generate meta tags for `og`, `twitter`
 
-### Options
+### Support config options
 
 Below options all effect html head meta tag
 
 | options            |  type   |                                             description |
-| ------------------ | :-----: | ------------------------------------------------------: |
+|--------------------|:-------:|--------------------------------------------------------:|
 | title              | string  |                       any thing you want to set to meta |
 | description        | string  |                       any thing you want to set to meta |
 | defaultDescription | string  |                    default description to you each page |
