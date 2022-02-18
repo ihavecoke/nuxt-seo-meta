@@ -5,6 +5,11 @@
   "keywords": [
     "nuxtjs",
     "seo",
+    "meta",
+    "seo-meta",
+    "opengraph",
+    "twitter:card",
+    "twitter:site",
     "ssr"
   ],
   "repository": "ihavecoke/nuxt-seo-meta",
