@@ -21,7 +21,6 @@
   ],
   "scripts": {
     "test": "jest",
-    "dev": "nuxt dev packages/demo",
     "build": "siroc build && mkdist --src packages/core/src/runtime --dist dist/runtime"
   },
   "dependencies": {
