@@ -5,6 +5,7 @@
   "description": "demo for nuxt-seo-meta npm",
   "devDependencies": {
     "nuxt": "^2.15.2",
-    "nuxt-seo-meta": "*"
+    "nuxt-seo-meta": "*",
+    "sass": "^1.49.8"
   }
 }
