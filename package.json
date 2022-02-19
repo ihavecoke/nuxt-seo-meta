@@ -6,9 +6,9 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "yarn workspace next-seo-meta jest",
-    "dev": "yarn workspace next-seo-meta nuxt dev",
-    "build": "yarn workspace next-seo-meta siroc build && mkdist --src packages/core/src/runtime --dist dist/runtime"
+    "test": "yarn workspace nuxt-seo-meta jest",
+    "dev": "yarn workspace nuxt-seo-meta nuxt dev",
+    "build": "yarn workspace nuxt-seo-meta siroc build && mkdist --src packages/core/src/runtime --dist dist/runtime"
   },
   "devDependencies": {
     "prettier": "^2.2.1",
