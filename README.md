@@ -1,6 +1,4 @@
-# nuxt-seo-meta
-
-Support [Nuxt](https://nuxtjs.org/) generate seo metadata easy
+Support [Nuxt](https://nuxtjs.org/) generate seo metadata easy.
 
 ### Install
 
@@ -10,11 +8,13 @@ yarn add nuxt-seo-meta
 //or npm
 npm add nuxt-seo-meta
 ```
-That's all.
-
 ### Usage
 
 You can global config seo metadata in `nuxt.config.js`
+
+> the global `seoMeta` options will effect when you call `$seoMeta` in page components. but not want to pass all seo meta keys
+> 
+> eg: if you don't want change page title only want to change description. you can use `$seoMeta({description:'Page description''})`  
 
 ```typescript
 {
@@ -23,7 +23,7 @@ You can global config seo metadata in `nuxt.config.js`
     'nuxt-seo-meta',
   ], 
     
-  // global set your site page title and descriptions 
+  // global set your site page title and descriptions
   seoMeta: {
     title: 'My site title',
     keywords: 'keyword1, keyword2, keyword3',
@@ -31,7 +31,6 @@ You can global config seo metadata in `nuxt.config.js`
   }
 }
 ```
-
 
 Also you can set seo metadata in page file component like ***pages/index.vue***, 
 there has two ways to set seo metadata.
