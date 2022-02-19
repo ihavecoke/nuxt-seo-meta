@@ -1,7 +1,7 @@
 import { resolve } from "path"
 import type { Module } from "@nuxt/types"
 
-interface ModuleOptions { }
+interface ModuleOptions {}
 
 const CONFIG_KEY = "seoMeta"
 
@@ -14,11 +14,11 @@ const nuxtModule: Module<ModuleOptions> = function module(
     fileName: "nuxt-seo-meta/plugin.js"
   })
 
-  const runtimeDir = resolve(__dirname, 'runtime')
-  this.nuxt.options.alias['nuxt-seo-meta/runtime'] = runtimeDir
-  this.nuxt.options.build.transpile.push(runtimeDir, 'nuxt-seo-meta', 'requrl')
+  const runtimeDir = resolve(__dirname, "runtime")
+  this.nuxt.options.alias["nuxt-seo-meta/runtime"] = runtimeDir
+  this.nuxt.options.build.transpile.push(runtimeDir, "nuxt-seo-meta", "requrl")
 }
 
-; (nuxtModule as any).meta = require("../package.json")
+;(nuxtModule as any).meta = require("../package.json")
 
 export default nuxtModule
