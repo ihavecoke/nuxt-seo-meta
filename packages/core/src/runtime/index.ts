@@ -1,4 +1,4 @@
-// you can found more info: https://metatags.io/
+// meta tags with more providers visited: https://metatags.io/
 import type { Context } from "@nuxt/types/app"
 
 interface ISeoMetaOptions {
@@ -26,16 +26,17 @@ export default function seoMeta(
   const imageUrl = options.image || options.defaultImage
   const url = options.url || options.defaultUrl
   const description = options.description || options.defaultDescription
+  const title = options.title
 
   const baseMeta = [
-    { name: "title", content: options.title },
+    { name: "title", content: title },
     { name: "description", content: description },
     { name: "image", content: imageUrl },
     { name: "keywords", content: options.keywords || description }
   ]
   // Facebook & LinkedIn
   const ogMeta = [
-    { property: "og:title", content: options.title },
+    { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:type", content: "website" },
     { property: "og:url", content: url },
@@ -48,7 +49,7 @@ export default function seoMeta(
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:site", content: url },
     { name: "twitter:creator", content: options.twitterUser },
-    { name: "twitter:title", content: options.title },
+    { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
     { name: "twitter:image", content: imageUrl }
   ]
@@ -78,13 +79,15 @@ export default function seoMeta(
 
   if (nuxtContext.app) {
     const { app: nuxtApp } = nuxtContext
-    if (nuxtApp.head && typeof nuxtApp.head !== 'function') {
+    if (nuxtApp.head && typeof nuxtApp.head !== "function") {
+      nuxtApp.head.title = title
+      // compose meta tags
       nuxtApp.head.meta = [
         ...(nuxtApp.head.meta || []),
-        ...Object.values({
-            ...keyBy(nuxtApp.head.meta || [], "hid"),
-            ...keyBy(normalizedMetas, "hid")
-          }) as any
+        ...(Object.values({
+          ...keyBy(nuxtApp.head.meta || [], "hid"),
+          ...keyBy(normalizedMetas, "hid")
+        }) as any)
       ]
     }
   }
