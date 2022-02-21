@@ -7,17 +7,19 @@
   ],
   "scripts": {
     "test": "yarn workspace nuxt-seo-meta jest",
-    "build": "yarn workspace nuxt-seo-meta siroc build && mkdist --src packages/core/src/runtime --dist dist/runtime",
-    "dev": "yarn workspace demo nuxt dev"
+    "build": "yarn workspace nuxt-seo-meta build",
+    "demo": "yarn workspace demo dev"
   },
   "devDependencies": {
-    "prettier": "^2.2.1",
-    "typescript": "^4.1.3",
-    "ts-loader": "^8.0.12",
-    "eslint": "^7.16.0",
-    "eslint-config-prettier": "^8.0.0",
+    "@nrwl/eslint-plugin-nx": "^11.3.1",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
-    "@nrwl/eslint-plugin-nx": "^11.3.1"
+    "concurrently": "^7.0.0",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^8.0.0",
+    "prettier": "^2.2.1",
+    "ts-loader": "^8.0.12",
+    "typescript": "^4.1.3",
+    "rimraf": "^3.0.2"
   }
 }

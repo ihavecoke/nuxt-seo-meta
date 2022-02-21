@@ -20,8 +20,9 @@
     "dist"
   ],
   "scripts": {
-    "test": "jest",
-    "build": "siroc build && mkdist --src packages/core/src/runtime --dist dist/runtime"
+    "build": "yarn clean && siroc build && mkdist --src packages/core/src/runtime --dist dist/runtime",
+    "clean": "rimraf .dist",
+    "test": "jest"
   },
   "dependencies": {
     "requrl": "^3.0.2"
@@ -29,10 +30,10 @@
   "devDependencies": {
     "@nuxt/types": "^2.14.12",
     "@nuxt/typescript-build": "^2.0.5",
-    "jest": "^26.6.3",
     "@types/jest": "^26.0.19",
     "@types/lodash": "^4.14.167",
     "fs-extra": "^9.0.1",
+    "jest": "^26.6.3",
     "mkdist": "^0.1.1",
     "path-browserify": "^1.0.1",
     "siroc": "^0.6.7",

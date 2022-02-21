@@ -8,6 +8,7 @@ const CONFIG_KEY = "seoMeta"
 const nuxtModule: Module<ModuleOptions> = function module(
   moduleOptions: ModuleOptions
 ) {
+  // https://nuxtjs.org/docs/internals-glossary/internals-module-container#addplugin-template
   this.addPlugin({
     src: resolve(__dirname, "./runtime/plugin.js"),
     options: { ...this.options[CONFIG_KEY], ...moduleOptions },
