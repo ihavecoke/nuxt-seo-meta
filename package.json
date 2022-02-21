@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "yarn workspace nuxt-seo-meta jest",
+    "test": "yarn workspace nuxt-seo-meta test",
     "build": "yarn workspace nuxt-seo-meta build",
     "dev": "yarn workspace demo dev"
   },
