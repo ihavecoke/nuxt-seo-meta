@@ -8,7 +8,7 @@
   "scripts": {
     "test": "yarn workspace nuxt-seo-meta jest",
     "build": "yarn workspace nuxt-seo-meta build",
-    "demo": "yarn workspace demo dev"
+    "dev": "yarn workspace demo dev"
   },
   "devDependencies": {
     "@nrwl/eslint-plugin-nx": "^11.3.1",
