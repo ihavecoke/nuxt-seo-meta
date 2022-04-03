@@ -1,0 +1,17 @@
+{
+  "name": "demo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "demo for nuxt-seo-meta npm",
+  "scripts": {
+    "dev": "yarn clean && nuxt dev",
+    "clean": "rimraf ./nuxt"
+  },
+  "dependencies": {
+    "nuxt": "^2.15.2",
+    "nuxt-seo-meta": "*"
+  },
+  "devDependencies": {
+    "sass": "^1.49.8"
+  }
+}

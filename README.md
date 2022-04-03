@@ -1,6 +1,4 @@
-# nuxt-seo-meta
-
-Support [Nuxt](https://nuxtjs.org/) generate seo metadata easy
+Support [Nuxt](https://nuxtjs.org/) generate seo metadata easy.
 
 ### Install
 
@@ -10,11 +8,13 @@ yarn add nuxt-seo-meta
 //or npm
 npm add nuxt-seo-meta
 ```
-That's all.
-
 ### Usage
 
 You can global config seo metadata in `nuxt.config.js`
+
+> the global `seoMeta` options is default seo meta config. when `$seoMeta` called in nuxt page components
+> 
+> eg: if you don't want change page title only want to change description. you can use `$seoMeta({description:'Page description''})`  
 
 ```typescript
 {
@@ -23,7 +23,7 @@ You can global config seo metadata in `nuxt.config.js`
     'nuxt-seo-meta',
   ], 
     
-  // global set your site page title and descriptions 
+  // global set your site page title and descriptions
   seoMeta: {
     title: 'My site title',
     keywords: 'keyword1, keyword2, keyword3',
@@ -31,7 +31,6 @@ You can global config seo metadata in `nuxt.config.js`
   }
 }
 ```
-
 
 Also you can set seo metadata in page file component like ***pages/index.vue***, 
 there has two ways to set seo metadata.
@@ -54,15 +53,17 @@ async asyncData({ $seoMeta }) {
 
 ```javascript
 head({$seoMeta}){
+  const title = "My awesome site"
   return {
+    title,
     meta: $seoMeta({
-      title: "My awesome site",
+      title,
       description: "awesome site description",
       url: "https://awesome.site",
       image: 'https://awesome.cdn/awesome.png'
     }, false)
   }
-}
+},
 ```
 
 it important to note that, if call `$setMeta` in `head` function, the second parameter must be `false`. 
@@ -76,8 +77,6 @@ this is useful when you want to set meta tags in your page component and merge w
 > `$seoMeta` function will return or generate meta tags for `og`, `twitter`
 
 ### Support config options
-
-Below options all effect html head meta tag
 
 | options            |  type   |                                             description |
 |--------------------|:-------:|--------------------------------------------------------:|

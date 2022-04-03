@@ -1,0 +1,18 @@
+{
+  "packages": ["packages/*"],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "registry": "https://registry.npmjs.org",
+      "allowBranch": ["release"],
+      "conventionalCommits": true
+    },
+    "version": {
+      "conventionalCommits": true,
+      "allowBranch": ["release"],
+      "message": "[skip ci] chore(release):"
+    }
+  }
+}
