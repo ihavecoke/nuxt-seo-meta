@@ -1,5 +1,5 @@
 import seoMeta from "nuxt-seo-meta/runtime"
-import { metaInfos } from "nuxt-seo-meta/dist/runtime/metainfo"
+import { metaInfos } from "nuxt-seo-meta/runtime/metainfo"
 import requrl from 'requrl'
 
 const defaultOptions = <%= serialize(options) %>
@@ -28,5 +28,5 @@ export default (ctx, inject) => {
     }
     return metaInfos(options)
   }
-  inject("metaInfo", metaInfosFn)
+  inject("metaInfos", metaInfosFn)
 }
