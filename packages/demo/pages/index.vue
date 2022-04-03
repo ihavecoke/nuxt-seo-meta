@@ -4,8 +4,8 @@
       <h1>nuxt seo metadata demo page</h1>
       <h3>This page is used to test the nuxt seo metadata plugin.</h3>
       <ul>
-        <li>first you can see the browser tab title 'SEO Meta - Title'</li>
-        <li>second you can open devtool element tab and search the &lt;head&gt; tag. more &lt;meta&gt; info generate for you.</li>
+        <li>you can see the browser tab title 'SEO Meta - Title'</li>
+        <li>you can open devtool element tab and search the &lt;head&gt; tag. more &lt;meta&gt; info generate for you.</li>
         <li>change the title or more meta info read <a href="https://github.com/ihavecoke/nuxt-seo-meta" target="_blank">this</a></li>
       </ul>
     </div>
@@ -16,9 +16,10 @@
 export default {
   name: "IndexPage",
   asyncData({ $seoMeta }) {
-    $seoMeta({
-      description: "!This is the description"
-    })
+    // $seoMeta({
+    //   title: "Index Page Title",
+    //   description: "Index page description",
+    // })
   }
 }
 </script>
