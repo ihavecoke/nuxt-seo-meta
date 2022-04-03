@@ -12,6 +12,7 @@ export default function seoMeta(
   if (nuxtContext.app) {
     const { app: nuxtApp } = nuxtContext
     if (nuxtApp.head && typeof nuxtApp.head !== "function") {
+      if (options.title) nuxtApp.head.title = options.title
       // compose meta tags
       nuxtApp.head.meta = [
         ...(nuxtApp.head.meta || []),
