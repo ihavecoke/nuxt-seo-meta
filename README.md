@@ -12,7 +12,7 @@ npm add nuxt-seo-meta
 
 You can global config seo metadata in `nuxt.config.js`
 
-> the global `seoMeta` options will effect when you call `$seoMeta` in page components. but not want to pass all seo meta keys
+> the global `seoMeta` options is default seo meta config. when `$seoMeta` called in nuxt page components
 > 
 > eg: if you don't want change page title only want to change description. you can use `$seoMeta({description:'Page description''})`  
 
@@ -77,8 +77,6 @@ this is useful when you want to set meta tags in your page component and merge w
 > `$seoMeta` function will return or generate meta tags for `og`, `twitter`
 
 ### Support config options
-
-Below options all effect html head meta tag
 
 | options            |  type   |                                             description |
 |--------------------|:-------:|--------------------------------------------------------:|
