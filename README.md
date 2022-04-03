@@ -53,15 +53,17 @@ async asyncData({ $seoMeta }) {
 
 ```javascript
 head({$seoMeta}){
+  const title = "My awesome site"
   return {
+    title,
     meta: $seoMeta({
-      title: "My awesome site",
+      title,
       description: "awesome site description",
       url: "https://awesome.site",
       image: 'https://awesome.cdn/awesome.png'
     }, false)
   }
-}
+},
 ```
 
 it important to note that, if call `$setMeta` in `head` function, the second parameter must be `false`. 
