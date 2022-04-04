@@ -11,10 +11,6 @@
     "dev": "yarn workspace demo dev"
   },
   "devDependencies": {
-    "@nrwl/cli": "latest",
-    "@nrwl/eslint-plugin-nx": "^11.3.1",
-    "@nrwl/tao": "latest",
-    "@nrwl/workspace": "latest",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
     "concurrently": "^7.0.0",
