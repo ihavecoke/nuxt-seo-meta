@@ -8,7 +8,9 @@
   "scripts": {
     "test": "yarn workspace nuxt-seo-meta test",
     "build": "yarn workspace nuxt-seo-meta build",
-    "dev": "yarn workspace demo dev"
+    "dev": "yarn workspace demo dev",
+    "website:dev": "yarn workspace website dev",
+    "website:build": "yarn workspace website build"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.15.2",
